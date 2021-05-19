@@ -22,11 +22,6 @@ final class MainViewController: UIViewController {
         uploadData()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        navigationController?.navigationBar.prefersLargeTitles = true
-    }
-    
     private func configureViewController() {
         title                = "Twitch"
         view.backgroundColor = .systemBackground
@@ -48,27 +43,35 @@ final class MainViewController: UIViewController {
         tableView.register(GameCell.self, forCellReuseIdentifier: GameCell.reuseID)
     }
     
-    private func showActivityIndicator() {
-        view.addSubview(activityIndicator)
-        activityIndicator.startAnimating()
-        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
-        
-        NSLayoutConstraint.activate([
-            activityIndicator.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            activityIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor)
-        ])
-    }
-    
     private func uploadData() {
-        showActivityIndicator()
-        NetworkManager.shared.fetchGames { [weak self] stream in
+        NetworkManager.shared.fetchGames { [weak self] result in
             guard let self = self else { return }
             DispatchQueue.main.async {
-                self.activityIndicator.removeFromSuperview()
-                self.topStreams = stream.top
-                self.tableView.reloadData()
+                switch result {
+                case .success(let stream):
+                    self.topStreams = stream.top
+                    StorageManager.save(stream: stream)
+                    self.tableView.reloadData()
+                case .failure:
+                    self.showAlert()
+                    StorageManager.retrieveData(completed: { stream in
+                        self.topStreams = stream.top
+                        self.tableView.reloadData()
+                    })
+                }
             }
         }
+    }
+    
+    private func showAlert() {
+        let alert = UIAlertController(title: "Отсутвует интернет",
+                                      message: "Пожалуйста подключитесь к сети чтобы получить актуальные данные",
+                                      preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { _ in
+            self.navigationController?.popViewController(animated: true)
+        }))
+        present(alert, animated: true)
     }
     
     @objc private func feedbackTapped() {
