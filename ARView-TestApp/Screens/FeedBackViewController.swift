@@ -6,11 +6,16 @@
 //
 
 import UIKit
+import Cosmos
 
 final class FeedBackViewController: UIViewController {
     
     private let feedbackTextView = UITextView()
     private let sendFeedbackButton = CustomButton(title: "Отправить отзыв", bgColor: .systemBlue, cornerRadius: 20)
+    lazy var ratingView: CosmosView = {
+        let view = CosmosView()
+        return view
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,10 +25,12 @@ final class FeedBackViewController: UIViewController {
     }
     
     private func configureUI() {
-        view.addSubviews(feedbackTextView, sendFeedbackButton)
+        view.addSubviews(feedbackTextView, ratingView, sendFeedbackButton)
         feedbackTextView.text = "Ваш отзыв"
         feedbackTextView.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
         feedbackTextView.translatesAutoresizingMaskIntoConstraints = false
+        ratingView.translatesAutoresizingMaskIntoConstraints = false
+        
         sendFeedbackButton.addTarget(self, action: #selector(fedButtonTapped), for: .touchUpInside)
         
         NSLayoutConstraint.activate([
@@ -31,6 +38,9 @@ final class FeedBackViewController: UIViewController {
             feedbackTextView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 12),
             feedbackTextView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -12),
             feedbackTextView.heightAnchor.constraint(equalToConstant: 300),
+            
+            ratingView.topAnchor.constraint(equalTo: feedbackTextView.bottomAnchor, constant: 20),
+            ratingView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             
             sendFeedbackButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -50),
             sendFeedbackButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),

@@ -20,6 +20,7 @@
 		125DACD226554EFF00F43A00 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 125DACD126554EFF00F43A00 /* Kingfisher */; };
 		125DACDA2655578000F43A00 /* FeedBackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125DACD92655578000F43A00 /* FeedBackViewController.swift */; };
 		125DACDE2655597600F43A00 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125DACDD2655597600F43A00 /* CustomButton.swift */; };
+		125DACE12655618F00F43A00 /* Cosmos in Frameworks */ = {isa = PBXBuildFile; productRef = 125DACE02655618F00F43A00 /* Cosmos */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				125DACE12655618F00F43A00 /* Cosmos in Frameworks */,
 				125DACD226554EFF00F43A00 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -153,6 +155,7 @@
 			name = "ARView-TestApp";
 			packageProductDependencies = (
 				125DACD126554EFF00F43A00 /* Kingfisher */,
+				125DACE02655618F00F43A00 /* Cosmos */,
 			);
 			productName = "ARView-TestApp";
 			productReference = 125DACA9265524B100F43A00 /* ARView-TestApp.app */;
@@ -183,6 +186,7 @@
 			mainGroup = 125DACA0265524B100F43A00;
 			packageReferences = (
 				125DACD026554EFF00F43A00 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				125DACDF2655618F00F43A00 /* XCRemoteSwiftPackageReference "Cosmos" */,
 			);
 			productRefGroup = 125DACAA265524B100F43A00 /* Products */;
 			projectDirPath = "";
@@ -423,6 +427,14 @@
 				minimumVersion = 6.3.0;
 			};
 		};
+		125DACDF2655618F00F43A00 /* XCRemoteSwiftPackageReference "Cosmos" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/evgenyneu/Cosmos.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 23.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -430,6 +442,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 125DACD026554EFF00F43A00 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		125DACE02655618F00F43A00 /* Cosmos */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 125DACDF2655618F00F43A00 /* XCRemoteSwiftPackageReference "Cosmos" */;
+			productName = Cosmos;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
