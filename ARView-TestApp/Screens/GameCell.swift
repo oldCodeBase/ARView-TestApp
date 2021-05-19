@@ -6,18 +6,11 @@
 //
 
 import UIKit
-import Kingfisher
 
 class GameCell: UITableViewCell {
     
-    static let reuseID  = "GameCell"
-    private let gameCover: UIImageView = {
-        let imageView = UIImageView()
-        imageView.clipsToBounds = true
-        imageView.contentMode = .scaleAspectFill
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        return imageView
-    }()
+    static let reuseID    = "GameCell"
+    private let gameCover = CustomImageView(frame: .zero)
     
     private let viewersIcon: UIImageView = {
         let imageView = UIImageView()
@@ -52,8 +45,7 @@ class GameCell: UITableViewCell {
     
     func set(stream: Top) {
         gameNameLabel.text = stream.game.name
-        let url = URL(string: stream.game.logo.large)
-        gameCover.kf.setImage(with: url)
+        gameCover.downloadImage(fromURL: stream.game.logo.large)
         viewersLabel.text = String(stream.viewers)
         channelsLabel.text = String(stream.channels)
     }

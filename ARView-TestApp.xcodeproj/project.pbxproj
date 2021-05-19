@@ -17,10 +17,11 @@
 		125DACC7265534F600F43A00 /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125DACC6265534F600F43A00 /* CustomLabel.swift */; };
 		125DACCD26554B2200F43A00 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125DACCC26554B2200F43A00 /* NetworkManager.swift */; };
 		125DACCF26554B4300F43A00 /* Stream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125DACCE26554B4300F43A00 /* Stream.swift */; };
-		125DACD226554EFF00F43A00 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 125DACD126554EFF00F43A00 /* Kingfisher */; };
 		125DACDA2655578000F43A00 /* FeedBackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125DACD92655578000F43A00 /* FeedBackViewController.swift */; };
 		125DACDE2655597600F43A00 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125DACDD2655597600F43A00 /* CustomButton.swift */; };
 		125DACE12655618F00F43A00 /* Cosmos in Frameworks */ = {isa = PBXBuildFile; productRef = 125DACE02655618F00F43A00 /* Cosmos */; };
+		125DACE326558F6A00F43A00 /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125DACE226558F6A00F43A00 /* CustomImageView.swift */; };
+		125DACE5265590E700F43A00 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125DACE4265590E700F43A00 /* StorageManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,8 @@
 		125DACCE26554B4300F43A00 /* Stream.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stream.swift; sourceTree = "<group>"; };
 		125DACD92655578000F43A00 /* FeedBackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedBackViewController.swift; sourceTree = "<group>"; };
 		125DACDD2655597600F43A00 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		125DACE226558F6A00F43A00 /* CustomImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
+		125DACE4265590E700F43A00 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,7 +49,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				125DACE12655618F00F43A00 /* Cosmos in Frameworks */,
-				125DACD226554EFF00F43A00 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				125DACCC26554B2200F43A00 /* NetworkManager.swift */,
+				125DACE4265590E700F43A00 /* StorageManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -123,6 +126,7 @@
 			children = (
 				125DACC6265534F600F43A00 /* CustomLabel.swift */,
 				125DACDD2655597600F43A00 /* CustomButton.swift */,
+				125DACE226558F6A00F43A00 /* CustomImageView.swift */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
@@ -154,7 +158,6 @@
 			);
 			name = "ARView-TestApp";
 			packageProductDependencies = (
-				125DACD126554EFF00F43A00 /* Kingfisher */,
 				125DACE02655618F00F43A00 /* Cosmos */,
 			);
 			productName = "ARView-TestApp";
@@ -185,7 +188,6 @@
 			);
 			mainGroup = 125DACA0265524B100F43A00;
 			packageReferences = (
-				125DACD026554EFF00F43A00 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				125DACDF2655618F00F43A00 /* XCRemoteSwiftPackageReference "Cosmos" */,
 			);
 			productRefGroup = 125DACAA265524B100F43A00 /* Products */;
@@ -221,8 +223,10 @@
 				125DACDE2655597600F43A00 /* CustomButton.swift in Sources */,
 				125DACCD26554B2200F43A00 /* NetworkManager.swift in Sources */,
 				125DACC7265534F600F43A00 /* CustomLabel.swift in Sources */,
+				125DACE326558F6A00F43A00 /* CustomImageView.swift in Sources */,
 				125DACC326552BB300F43A00 /* UIVIew+Ext.swift in Sources */,
 				125DACC12655292C00F43A00 /* GameCell.swift in Sources */,
+				125DACE5265590E700F43A00 /* StorageManager.swift in Sources */,
 				125DACCF26554B4300F43A00 /* Stream.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -419,14 +423,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		125DACD026554EFF00F43A00 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 6.3.0;
-			};
-		};
 		125DACDF2655618F00F43A00 /* XCRemoteSwiftPackageReference "Cosmos" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/evgenyneu/Cosmos.git";
@@ -438,11 +434,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		125DACD126554EFF00F43A00 /* Kingfisher */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 125DACD026554EFF00F43A00 /* XCRemoteSwiftPackageReference "Kingfisher" */;
-			productName = Kingfisher;
-		};
 		125DACE02655618F00F43A00 /* Cosmos */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 125DACDF2655618F00F43A00 /* XCRemoteSwiftPackageReference "Cosmos" */;
