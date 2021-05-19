@@ -7,21 +7,21 @@
 
 import UIKit
 
-struct Stream: Decodable {
+struct Stream: Codable {
     let top: [Top]
 }
 
-struct Top: Decodable {
+struct Top: Codable {
     let game: Game
     let viewers: Int
     let channels: Int
 }
 
-struct Game: Decodable {
+struct Game: Codable {
     let name: String
     let logo: Box
 }
 
-struct Box: Decodable {
+struct Box: Codable {
     let large: String
 }
