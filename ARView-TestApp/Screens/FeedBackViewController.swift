@@ -50,6 +50,16 @@ final class FeedBackViewController: UIViewController {
     }
     
     @objc private func fedButtonTapped() {
-        navigationController?.popViewController(animated: true)
+        showAlert()
+    }
+    
+    private func showAlert() {
+        let alert = UIAlertController(title: "Отзыв отправлен",
+                                      message: "Спасибо за ваш отзыв",
+                                      preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { _ in
+            self.navigationController?.popViewController(animated: true)
+        }))
+        present(alert, animated: true)
     }
 }
