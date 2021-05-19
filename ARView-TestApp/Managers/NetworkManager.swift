@@ -58,9 +58,9 @@ final class NetworkManager {
                   let response = response as? HTTPURLResponse, response.statusCode == 200,
                   let data = data,
                   let image = UIImage(data: data) else {
-                    completed(nil)
-                    return
-                }
+                completed(nil)
+                return
+            }
             
             self.cache.setObject(image, forKey: cacheKey)
             completed(image)

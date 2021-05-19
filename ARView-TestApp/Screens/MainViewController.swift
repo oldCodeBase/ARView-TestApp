@@ -64,7 +64,7 @@ final class MainViewController: UIViewController {
     }
     
     private func showAlert() {
-        let alert = UIAlertController(title: "Отсутвует интернет",
+        let alert = UIAlertController(title: "Отсутствует интернет",
                                       message: "Пожалуйста подключитесь к сети чтобы получить актуальные данные",
                                       preferredStyle: .alert)
         
