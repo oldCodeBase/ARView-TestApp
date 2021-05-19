@@ -21,16 +21,16 @@ final class FeedBackViewController: UIViewController {
     
     private func configureUI() {
         view.addSubviews(feedbackTextView, sendFeedbackButton)
-        feedbackTextView.text = "Ваш отзыв о программе"
-        feedbackTextView.backgroundColor = .secondaryLabel
+        feedbackTextView.text = "Ваш отзыв"
+        feedbackTextView.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
         feedbackTextView.translatesAutoresizingMaskIntoConstraints = false
         sendFeedbackButton.addTarget(self, action: #selector(fedButtonTapped), for: .touchUpInside)
         
         NSLayoutConstraint.activate([
-            feedbackTextView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 40),
+            feedbackTextView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
             feedbackTextView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 12),
             feedbackTextView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -12),
-            feedbackTextView.heightAnchor.constraint(equalToConstant: 200),
+            feedbackTextView.heightAnchor.constraint(equalToConstant: 300),
             
             sendFeedbackButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -50),
             sendFeedbackButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
