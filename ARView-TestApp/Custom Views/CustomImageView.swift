@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CustomImageView: UIImageView {
+final class CustomImageView: UIImageView {
     
     let cache = NetworkManager.shared.cache
     override init(frame: CGRect) {
@@ -21,7 +21,7 @@ class CustomImageView: UIImageView {
     
     private func configure() {
         clipsToBounds = true
-        contentMode   = .scaleAspectFill
+        contentMode   = .scaleAspectFit
         translatesAutoresizingMaskIntoConstraints = false
     }
     

@@ -19,7 +19,7 @@ struct Top: Codable {
 
 struct Game: Codable {
     let name: String
-    let logo: Box
+    let box: Box
 }
 
 struct Box: Codable {

@@ -10,7 +10,6 @@ import UIKit
 final class MainViewController: UIViewController {
     
     private let tableView         = UITableView(frame: .zero, style: .insetGrouped)
-    private let activityIndicator = UIActivityIndicatorView(style: .large)
     private var topStreams: [Top] = []
     
     override func viewDidLoad() {
@@ -28,10 +27,12 @@ final class MainViewController: UIViewController {
     }
     
     private func configureNavBar() {
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "pencil.circle"),
-                                                            style: .plain,
-                                                            target: self,
-                                                            action: #selector(feedbackTapped))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            image: UIImage(systemName: "pencil.circle"),
+            style: .plain,
+            target: self,
+            action: #selector(feedbackTapped)
+        )
     }
     
     private func configureTableView() {
@@ -64,9 +65,11 @@ final class MainViewController: UIViewController {
     }
     
     private func showAlert() {
-        let alert = UIAlertController(title: "Отсутствует интернет",
-                                      message: "Пожалуйста подключитесь к сети чтобы получить актуальные данные",
-                                      preferredStyle: .alert)
+        let alert = UIAlertController(
+            title: "Отсутствует интернет",
+            message: "Пожалуйста подключитесь к сети чтобы получить актуальные данные",
+            preferredStyle: .alert
+        )
         
         alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { _ in
             self.navigationController?.popViewController(animated: true)

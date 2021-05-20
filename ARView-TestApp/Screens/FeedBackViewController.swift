@@ -11,32 +11,31 @@ import Cosmos
 final class FeedBackViewController: UIViewController {
     
     private let feedbackTextView = UITextView()
-    private let sendFeedbackButton = CustomButton(title: "Отправить отзыв", bgColor: .systemBlue, cornerRadius: 20)
-    lazy var ratingView: CosmosView = {
-        let view = CosmosView()
-        return view
-    }()
+    private let ratingView = CosmosView()
+    private let sendFeedbackButton = CustomButton(title: "Отправить отзыв",
+                                                  bgColor: .systemBlue,
+                                                  cornerRadius: 20)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
-        view.backgroundColor = .systemBackground
-        navigationController?.navigationBar.prefersLargeTitles = false
     }
     
     private func configureUI() {
+        view.backgroundColor = .systemBackground
         view.addSubviews(feedbackTextView, ratingView, sendFeedbackButton)
-        feedbackTextView.text = "Ваш отзыв"
+        
+        feedbackTextView.text            = "Ваш отзыв"
         feedbackTextView.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
         feedbackTextView.translatesAutoresizingMaskIntoConstraints = false
-        ratingView.translatesAutoresizingMaskIntoConstraints = false
+        ratingView.translatesAutoresizingMaskIntoConstraints       = false
         
         sendFeedbackButton.addTarget(self, action: #selector(fedButtonTapped), for: .touchUpInside)
         
         NSLayoutConstraint.activate([
-            feedbackTextView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
-            feedbackTextView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 12),
-            feedbackTextView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -12),
+            feedbackTextView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            feedbackTextView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            feedbackTextView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             feedbackTextView.heightAnchor.constraint(equalToConstant: 300),
             
             ratingView.topAnchor.constraint(equalTo: feedbackTextView.bottomAnchor, constant: 20),
@@ -57,6 +56,7 @@ final class FeedBackViewController: UIViewController {
         let alert = UIAlertController(title: "Отзыв отправлен",
                                       message: "Спасибо за ваш отзыв",
                                       preferredStyle: .alert)
+        
         alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { _ in
             self.navigationController?.popViewController(animated: true)
         }))

@@ -70,7 +70,6 @@ final class NetworkManager {
     }
 }
 
-
 enum CustomError: String, Error {
     case unableToComplete   = "Unable to complete your request. Please check your internet connection"
 }

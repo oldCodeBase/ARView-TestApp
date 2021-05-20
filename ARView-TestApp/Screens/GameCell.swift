@@ -7,25 +7,25 @@
 
 import UIKit
 
-class GameCell: UITableViewCell {
+final class GameCell: UITableViewCell {
     
     static let reuseID    = "GameCell"
     private let gameCover = CustomImageView(frame: .zero)
     
     private let viewersIcon: UIImageView = {
-        let imageView = UIImageView()
+        let imageView           = UIImageView()
         imageView.clipsToBounds = true
-        imageView.image = UIImage(systemName: "eye")
-        imageView.tintColor = .secondaryLabel
+        imageView.image         = UIImage(systemName: "eye")
+        imageView.tintColor     = .secondaryLabel
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
     
     private let channelsIcon: UIImageView = {
-        let imageView = UIImageView()
+        let imageView           = UIImageView()
         imageView.clipsToBounds = true
-        imageView.tintColor = .systemRed
-        imageView.image = UIImage(systemName: "play.rectangle")
+        imageView.tintColor     = .systemRed
+        imageView.image         = UIImage(systemName: "play.rectangle")
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
@@ -45,9 +45,9 @@ class GameCell: UITableViewCell {
     
     func set(stream: Top) {
         gameNameLabel.text = stream.game.name
-        gameCover.downloadImage(fromURL: stream.game.logo.large)
-        viewersLabel.text = String(stream.viewers)
+        viewersLabel.text  = String(stream.viewers)
         channelsLabel.text = String(stream.channels)
+        gameCover.downloadImage(fromURL: stream.game.box.large)
     }
     
     private func configure() {
@@ -61,7 +61,7 @@ class GameCell: UITableViewCell {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         
         addSubviews(gameCover, gameNameLabel, stackView)
-        gameNameLabel.numberOfLines = 3
+        gameNameLabel.numberOfLines = 2
         
         NSLayoutConstraint.activate([
             gameCover.topAnchor.constraint(equalTo: contentView.topAnchor),
