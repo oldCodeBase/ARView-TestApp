@@ -27,6 +27,7 @@ final class MainViewController: UIViewController {
     }
     
     private func configureNavBar() {
+        navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.rightBarButtonItem = UIBarButtonItem(
             image: UIImage(systemName: "pencil.circle"),
             style: .plain,

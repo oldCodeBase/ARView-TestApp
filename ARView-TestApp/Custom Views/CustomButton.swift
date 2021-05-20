@@ -14,7 +14,7 @@ final class CustomButton: UIButton {
         configure()
     }
     
-    convenience init(title: String, bgColor: UIColor, cornerRadius: CGFloat) {
+    convenience init(title: String, bgColor: UIColor = .systemBlue, cornerRadius: CGFloat) {
         self.init(type: .system)
         self.setTitle(title, for: .normal)
         self.backgroundColor = bgColor
