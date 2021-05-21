@@ -14,9 +14,28 @@
 отзыва).
 
 ## Скриншоты
-<img src=https://github.com/sageibra/ARView-TestApp/blob/main/screenshots/screenshot.png width=200><img src=https://github.com/sageibra/ARView-TestApp/blob/main/screenshots/screenshot1.png width=200>
-<img src=https://github.com/sageibra/ARView-TestApp/blob/main/screenshots/screenshot2.png width=200>
-<img src=https://github.com/sageibra/ARView-TestApp/blob/main/screenshots/screenshot3.png width=200>
-<img src=https://github.com/sageibra/ARView-TestApp/blob/main/screenshots/screenshot5.png width=200>
-<img src=https://github.com/sageibra/ARView-TestApp/blob/main/screenshots/screenshot6.png width=200>
-<img src=https://github.com/sageibra/ARView-TestApp/blob/main/screenshots/screenshot4.png width=200>
+
+<table border=0>
+    <tr>
+        <td>
+            <img src=https://github.com/sageibra/ARView-TestApp/blob/main/screenshots/screenshot.png width=200 align=center>
+        </td>
+        <td>
+            <img src=https://github.com/sageibra/ARView-TestApp/blob/main/screenshots/screenshot2.png width=200 align=center>
+        </td>
+        <td>
+            <img src=https://github.com/sageibra/ARView-TestApp/blob/main/screenshots/screenshot5.png width=200 align=center>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <img src=https://github.com/sageibra/ARView-TestApp/blob/main/screenshots/screenshot1.png width=200 align=center>
+        </td>
+        <td>
+            <img src=https://github.com/sageibra/ARView-TestApp/blob/main/screenshots/screenshot3.png width=200 align=center>
+        </td>
+        <td>
+            <img src=https://github.com/sageibra/ARView-TestApp/blob/main/screenshots/screenshot4.png width=200 align=center>
+        </td>
+    </tr>
+</table>
